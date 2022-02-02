@@ -1,0 +1,19 @@
+.parentNav {
+  display: flex;
+  justify-content: space-between !important;
+  align-items: center;
+  color: white;
+
+  h6 {
+    margin: 0;
+  }
+
+  .nav_right {
+    display: flex;
+    align-items: center;
+  }
+
+  .buttons {
+    margin-right: 5px;
+  }
+}

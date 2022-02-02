@@ -1,0 +1,33 @@
+form {
+  margin: 0 auto;
+  // width: 500px;
+  //   display: inline;
+  // text-align: center;
+  border: 2px solid black;
+  border-radius: 10px;
+  display: inline-block;
+  padding: 10px;
+  margin-top: 50px;
+
+  .submit_button {
+    margin-left: 43%;
+    width: 100px;
+  }
+
+  .title {
+    width: 81ch;
+  }
+  .dropdown {
+    width: 81ch;
+    margin: 8px;
+  }
+
+  .radio {
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .age_date {
+    width: 39.5ch;
+  }
+}
