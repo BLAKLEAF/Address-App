@@ -29,14 +29,8 @@ export class Contacts {
   async createTable() {
     let params = {
       TableName: tableName,
-      KeySchema: [
-        { AttributeName: "id", KeyType: "HASH" }, //Partition key
-        // { AttributeName: "phone_number", KeyType: "RANGE" }, //Sort key
-      ],
-      AttributeDefinitions: [
-        { AttributeName: "id", AttributeType: "S" },
-        // { AttributeName: "phone_number", AttributeType: "N" },
-      ],
+      KeySchema: [{ AttributeName: "id", KeyType: "HASH" }],
+      AttributeDefinitions: [{ AttributeName: "id", AttributeType: "S" }],
       ProvisionedThroughput: {
         ReadCapacityUnits: 10,
         WriteCapacityUnits: 10,
@@ -73,8 +67,6 @@ export class Contacts {
         category: contact.category,
         gender: contact.gender,
       },
-      // ReturnItemCollectionKeyAttributeMap : "string",
-      // ReturnCollectionKeys: "TOTAL",
       ReturnConsumedCapacity: "TOTAL",
       ReturnItemCollectionMetrics: "SIZE",
       ReturnValues: "ALL_OLD",
@@ -101,9 +93,6 @@ export class Contacts {
       if (!retrievedContacts) {
         throw "Unable to retrieve Contacts...";
       } else {
-        // retrievedContacts.Items.map((contact: any) => {
-        //   console.log(JSON.stringify(contact, null, 3));
-        // });
         return retrievedContacts;
       }
     } catch (error) {
@@ -210,3 +199,6 @@ export class Contacts {
     }
   }
 }
+
+// const contact = new Contacts();
+// contact.createTable();
